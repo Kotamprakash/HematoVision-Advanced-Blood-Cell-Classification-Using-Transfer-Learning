@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HematoVision</title>
+
+    <style>
+
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 700px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background-color: #e74c3c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 28px;
+            border-radius: 6px 6px 0 0;
+            margin: -30px -30px 20px -30px;
+        }
+
+        h3 {
+            color: #5a6c7d;
+            margin-top: 20px;
+        }
+
+        p {
+            color: #5a6c7d;
+            line-height: 1.6;
+        }
+
+        input[type="file"] {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .predict-btn {
+            background-color: #8e44ad;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .predict-btn:hover {
+            background-color: #732d91;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        Welcome to HematoVision
+    </div>
+
+    <h3>About Blood Cells</h3>
+
+    <p>
+        Blood cells are vital components of our body, playing essential roles in immunity,
+        oxygen transport, and clotting.
+    </p>
+
+    <h3>Predict Blood Cell Type</h3>
+
+    <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+
+        <input type="file" name="file" required>
+
+        <br><br>
+
+        <button type="submit" class="predict-btn">
+            PREDICT
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
